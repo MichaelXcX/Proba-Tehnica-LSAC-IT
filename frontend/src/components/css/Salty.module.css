@@ -1,0 +1,67 @@
+.container {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 3vw;
+    overflow: hidden;
+}
+
+.container_upload {
+    position: relative;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_title,
+.container_upload > p {
+    margin-bottom: 3vw;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.container_title {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #252F65;
+
+}
+
+.container_upload > p {
+    font-size: 1rem;
+}
+
+.container_salty {
+    position: relative;
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.salty[width][height] {
+    position: relative;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+}
+
+.upload {
+    position: relative;
+    width: 15vw;
+    height: 5vw;
+    border: none;
+    background: #6F3096;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 1.5vw;
+}
+
