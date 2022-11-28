@@ -1,0 +1,39 @@
+.container {
+    position: relative;
+    background: #FFFFFF;
+    width: 70vw;
+    height: 40vh;
+    border-radius: 21px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container_text {
+    position: relative;
+    width: 30vw;
+}
+
+.container_form {
+    position: relative;
+    display: flex;
+    width: 30vw;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form_descriere {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_meme {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
