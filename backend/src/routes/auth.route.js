@@ -34,9 +34,11 @@ router.post('/signup', async (req, res) => {
     try {
         const { email, username, password } = req.body;
         let user = await User.findOne({ email: email, username: username });
+
         if(user) {
             return res.status(400).send({ message: "User deja creat" });
         }
+        
         user = new User({ email, username, password });
         await user.save();
         const token = jwt.sign({ id: user._id}, process.env.JWT_SECRET);
