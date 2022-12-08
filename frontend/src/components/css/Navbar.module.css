@@ -23,6 +23,7 @@
     position: relative;
     margin: 0 2vw;
     font-size: 1.25rem;
+    cursor: pointer;
 }
 
 .nav_logo {
