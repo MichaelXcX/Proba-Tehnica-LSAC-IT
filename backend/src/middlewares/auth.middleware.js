@@ -6,6 +6,7 @@ const checkIfLogged = async (req, res, next) => {
     if(!token) {
         return res.status(401).send({ message: "Not authorized!" });
     }
+    
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const userId = decoded.id;
