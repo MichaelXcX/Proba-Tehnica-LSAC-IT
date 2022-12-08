@@ -29,7 +29,7 @@ router.post('/', checkIfLogged, async (req, res) => {
     }
 });
 
-router.get('/:id', checkIfLogged, async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;
         let meme = await Meme.findOne({ _id: id });
@@ -46,7 +46,7 @@ router.get('/:id', checkIfLogged, async (req, res) => {
     }
 });
 
-router.get('/', checkIfLogged, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         let allMemes = await Meme.find({});
         
@@ -70,7 +70,7 @@ router.patch('/:id', checkIfLogged, async (req, res) => {
         if(!meme) {
             return res.status(400).send({ message: "Meme invalid"});
         }
-
+        //TODO: Incearca sa implementezi verificarea posesorului meme-ului in middleware
         const token = req.headers.authorization.split(' ')[1];
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findOne({ _id: decoded.id });

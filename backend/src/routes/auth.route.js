@@ -33,6 +33,23 @@ router.post('/login', async (req, res) => {
 router.post('/signup', async (req, res) => {
     try {
         const { email, username, password } = req.body;
+
+        const domain = "stud.acs.upb.ro";
+        const emailDomain = email.split('@')[1];
+
+        if(domain !== emailDomain) {
+            return res.status(400).send("Mail-ul trebuie sa fie unul de student (@stud.acs.upb.ro)");
+        }
+
+        if(username.length > 32 && username.length < 8) {
+            return res.status(400).send("Username-ul trebuie sa fie intre 8 si 32 de caractere!");
+        }
+
+        if(password.length > 32 && password.length < 8) {
+            return res.status(400).send("Parola trebuie sa fie intre 8 si 32 de caractere!");
+        }
+
+
         let user = await User.findOne({ email: email, username: username });
 
         if(user) {
