@@ -3,6 +3,7 @@ import salty from '../img/salty.png'
 
 import style from './css/Salty.module.css'
 
+// =))))
 function Salty() {
   return (
     <div className={style.container}>
