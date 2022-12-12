@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Popup from './Popup';
 import logo from '../img/logo.png'
 
@@ -17,8 +17,12 @@ function Navbar() {
       <div className={style.navbar}>
         <img className={style.nav_logo} src={logo} alt="MEMEIT?" />
         <ul className={style.nav_list}>
-          <li className={style.nav_link} onClick={() => {handlePopup(); setType("login")}}>Logare</li>
-          <li className={style.nav_link} onClick={() => {handlePopup(); setType("register")}}>Creare cont</li>
+          {/*
+             Aici daca vrei sa apelezi o singura functie ai putea sa ii dai lui handlePopup ca parametru 
+             "login" si "register" si sa apelezi acolo setType
+          */}
+          <li className={style.nav_link} onClick={() => { handlePopup(); setType("login") }}>Logare</li>
+          <li className={style.nav_link} onClick={() => { handlePopup(); setType("register") }}>Creare cont</li>
         </ul>
       </div>
       <Popup type={type} status={open} setStatus={setOpen}></Popup>

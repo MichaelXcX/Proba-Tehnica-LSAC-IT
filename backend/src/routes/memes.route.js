@@ -15,6 +15,7 @@ router.post('/', checkIfLogged, async (req, res) => {
             return res.status(400).send({ message: "Fii mai creativ wtf!"});
         }
         
+        // Asta nu verifica deja middleware-ul tau?
         const token = req.headers.authorization.split(' ')[1];
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findOne({ _id: decoded.id });
@@ -32,6 +33,7 @@ router.post('/', checkIfLogged, async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;
+        // Aici poti folosi si findById(id)
         let meme = await Meme.findOne({ _id: id });
         
         if(!meme) {
@@ -46,10 +48,15 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// Nitpick: Daca ai un parametru/variabila si vrei sa indici faptul ca nu e folosita
+// poti sa ii pui numele _
+// In cazul asta req poate sa se numeasca _
 router.get('/', async (req, res) => {
     try {
         let allMemes = await Meme.find({});
         
+        // Nu cred ca are cum sa iti intoarca null, deci nu cred ca ai nevoie
+        // neaparat de if-ul asta
         if(!allMemes) {
             return res.status(400).send({ message: "Avem o problema!"});
         }
@@ -70,7 +77,9 @@ router.patch('/:id', checkIfLogged, async (req, res) => {
         if(!meme) {
             return res.status(400).send({ message: "Meme invalid"});
         }
-        //TODO: Incearca sa implementezi verificarea posesorului meme-ului in middleware
+
+        // Yap, good catch =)))
+        // TODO: Incearca sa implementezi verificarea posesorului meme-ului in middleware
         const token = req.headers.authorization.split(' ')[1];
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findOne({ _id: decoded.id });
@@ -81,6 +90,9 @@ router.patch('/:id', checkIfLogged, async (req, res) => {
 
         const newDescription = req.body;
         console.log(req.body);
+        // Nu cred ca mai ai nevoie de callback-ul de la final ca 
+        // eroarea ar trebui sa o prinda catch-ul si daca pui await res.send se executa
+        // dupa ce user-ul a fost updatat.
         await Meme.findOneAndUpdate({ _id: id }, newDescription, function(err, result) {
             if(err) return res.send(err);
             return res.status(200).send({ message: "Updated Meme!", res: result});
