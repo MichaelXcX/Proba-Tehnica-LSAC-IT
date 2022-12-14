@@ -7,3 +7,16 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 1200px) {
+    .wrapper {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background: #6F3096;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5vh 0;
+    }
+}
