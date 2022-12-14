@@ -18,3 +18,18 @@
     justify-content: space-around;
     align-items: center;
 }
+
+@media screen and (max-width: 1200px) {
+
+    .memes {
+        position: relative;
+        width: 100%;
+        margin: 3vh auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+}

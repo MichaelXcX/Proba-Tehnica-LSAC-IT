@@ -32,9 +32,7 @@ function Popup(props) {
                                 </label>
                                 <input className={style.signup_btn} type="submit" name="signup" id="signup" value="Conecteaza-te"/>
                             </>
-                            : <></>
-                        }
-                        { props.type === "register" ?   
+                            :                        
                             <>
                                 <label>
                                     Username:
@@ -50,7 +48,6 @@ function Popup(props) {
                                 </label>
                                 <input className={style.signup_btn} type="submit" name="signup" id="signup" value="Creare cont"/>
                             </>
-                            :<></>
                         }
                     </form>
                 </div>

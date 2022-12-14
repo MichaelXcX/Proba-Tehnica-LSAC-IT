@@ -16,9 +16,13 @@ function UploadCard() {
         </div>
         <div className={style.form_meme}>
           <label>Meme (jpg, jpeg, png, gif)</label>
-          <input type="file" placeholder='drag & drop image or click to upload'/>
+          <div className={style.drag_drop}>
+            <input type="file" placeholder='' multiple hidden/>
+            <p>drag & drop image or click to upload</p>
+
+          </div>
         </div>
-        <input type="submit" value="Trimite"/>
+        <input className={style.submit_btn} type="submit" value="Trimite"/>
       </form>
     </div>
   )

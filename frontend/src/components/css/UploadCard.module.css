@@ -3,16 +3,25 @@
     background: #FFFFFF;
     width: 70vw;
     height: 40vh;
+    box-shadow: 0px 10px 30px rgba(38, 50, 56, 0.5);
     border-radius: 21px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    padding: 3vh 0;
+    color: #252F65;
+
 }
 
 .container_text {
     position: relative;
     width: 30vw;
+}
+
+.container_text > h1 {
+    position: relative;
+    margin: 2vh 0;
 }
 
 .container_form {
@@ -31,9 +40,107 @@
     flex-direction: column;
 }
 
+.form_descriere > input  {
+    position: relative;
+    width: 20vw;
+    height: 3vh;
+    padding: 0 1vw;
+    border: 1px solid #06114F;
+    border-radius: 5px;
+}
+
 .form_meme {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
+.drag_drop{
+    border: 1px dashed #fff;
+    height: 15vh;
+    width: 20vw;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #252F65;
+    border-radius: 5px;
+    padding: 0 1vw;
+    color: rgba(6, 17, 79, 0.3);
+}
+.drag_drop.active{
+    border: 2px solid #fff;
+}
+.drag_drop .icon{
+    font-size: 30px;
+    color: #fff;
+}
+.submit_btn {
+    position: relative;
+    width: 15vw;
+    height: 5vh;
+    font-size: calc(1rem+1vw);
+    background: #6F3096;
+    border-radius: 5px;
+    border: none;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        position: relative;
+        background: #FFFFFF;
+        width: 70vw;
+        height: 70vh;
+        box-shadow: 0px 10px 30px rgba(38, 50, 56, 0.5);
+        border-radius: 21px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        color: #252F65;
+
+    }
+    .container_text {
+        position: relative;
+        width: 30vw;
+        text-align: center;
+    }
+    .container_text > h1 {
+        position: relative;
+        margin: 2vh 0;
+    }
+
+    .form_descriere > input  {
+        position: relative;
+        width: 30vw;
+        height: 3vh;
+        padding: 0 1vw;
+        border: 1px solid #06114F;
+        border-radius: 5px;
+    }
+
+    .drag_drop{
+        border: 1px dashed #fff;
+        height: 20vh;
+        width: 30vw;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid #252F65;
+        border-radius: 5px;
+        padding: 0 1vw;
+        color: rgba(6, 17, 79, 0.3);
+    }
+    .drag_drop.active{
+        border: 2px solid #fff;
+    }
+    .drag_drop .icon{
+        font-size: 30px;
+        color: #fff;
+    }
+    
+}

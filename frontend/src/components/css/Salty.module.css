@@ -24,7 +24,7 @@
 .container_title,
 .container_upload > p {
     margin-bottom: 3vw;
-    font-size: 1.5rem;
+    font-size: calc(1.5rem + 1vw);
     text-align: center;
 }
 
@@ -67,3 +67,28 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 1200px) {
+    .container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 10vh 0;
+        overflow: hidden;
+    }
+    
+    .container_upload {
+        position: relative;
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5vw;
+    }
+    
+}
